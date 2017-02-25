@@ -14,11 +14,11 @@ const requires = [
   'app.partials'
 ];
 
-export default angular.module('ngesixstarter', requires)
+export default angular.module('swiftlow', requires)
         .constant('AppConstants', appConstants)
         .config(appConfig);
 
 
-angular.bootstrap(document, ['ngesixstarter'], {
+angular.bootstrap(document, ['swiftlow'], {
   strictDi: true
 });

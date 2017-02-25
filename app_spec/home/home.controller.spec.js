@@ -1,7 +1,7 @@
 describe('Home', function() {
   var HomeController,UsersService;
 
-  beforeEach(angular.mock.module('ngesixstarter'));
+  beforeEach(angular.mock.module('swiftlow'));
 
   beforeEach(inject(($controller,_UsersService_) => {
     HomeController = $controller('HomeController');

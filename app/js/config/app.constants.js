@@ -1,5 +1,5 @@
 const AppConstants = {
-  appName: 'ngesixstarter'
+  appName: 'swiftlow'
 };
 
 export default AppConstants;
