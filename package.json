@@ -1,21 +1,18 @@
 {
-  "name": "ngesixstarter",
-  "version": "1.0.1",
-  "description": "Javascript TDD-ready front-end template with ES6 support.",
-  "private": false,
+  "name": "swiftlow",
+  "version": "0.0.1",
+  "description": "A notes editor for agile software developers.",
+  "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/fradot/ngesixstarter.git"
+    "url": "https://github.com/fradot/swiftlow.git"
   },
   "keywords": [
     "angular",
-    "javascript",
-    "TDD",
-    "BDD",
-    "ECMAScript6",
-    "ES6",
-    "starter",
-    "template"
+    "notepad",
+    "develper",
+    "agile developer",
+    "ES6"
   ],
   "author": "Francesco Tucceri <fradot>",
   "license": "MIT",
