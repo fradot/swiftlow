@@ -132,7 +132,7 @@ gulp.task('connect', function() {
     });
 });
 
-gulp.task('copy', ['scripts','styles','source']);
+gulp.task('copy', ['clean','scripts','styles','source']);
 
 
 // -------- TEST TASK
