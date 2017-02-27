@@ -3,3 +3,4 @@ npm-debug.log
 dist
 app/js/partials
 roadmap.txt
+bower_components

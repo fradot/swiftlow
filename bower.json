@@ -1,0 +1,31 @@
+{
+  "name": "swiftlow",
+  "description": "A notes editor for agile software developers.",
+  "main": "app/app.js",
+  "authors": [
+    "Francesco Tucceri <fradot>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "notepad",
+    "develper",
+    "agile",
+    "developer",
+    "ES6"
+  ],
+  "homepage": "https://github.com/fradot/swiftlow",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "app_spec"
+  ],
+  "devDependencies": {
+    "bootstrap": "^3.3.7"
+  },
+  "dependencies": {}
+}
