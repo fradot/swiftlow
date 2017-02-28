@@ -63,12 +63,7 @@ gulp.task('scripts',['partials'], function (done) {
       .pipe(plugins.header(banner))
         .on('error', gutil.log)
     .pipe(plugins.sourcemaps.write('./'))
-    .pipe(gulp.dest(dirs.dist + '/js'))
-    .on('end', function () {
-      gulp.src([
-          dirs.dist + '/**/*'
-        ]).pipe(plugins.connect.reload());
-    });
+    .pipe(gulp.dest(dirs.dist + '/js'));
 });
 
 gulp.task('styles', function () {
@@ -83,11 +78,7 @@ gulp.task('styles', function () {
       .pipe(plugins.cssnano())
       .pipe(plugins.header(banner))
     .pipe(plugins.sourcemaps.write('./'))
-    .pipe(gulp.dest(dirs.dist + '/css'))
-    .on('end', function () {
-      gulp.src(dirs.dist + '/**/*.css')
-        .pipe(plugins.connect.reload());
-    });
+    .pipe(gulp.dest(dirs.dist + '/css'));
 });
 
 gulp.task('source', function () {
@@ -98,21 +89,23 @@ gulp.task('source', function () {
   ], {
       // Include hidden files by default
       dot: true
-  }).pipe(gulp.dest(dirs.dist))
-  .on('end', function () {
-    gulp.src(dirs.dist + '/**/*')
-      .pipe(plugins.connect.reload());
-  });
+  }).pipe(gulp.dest(dirs.dist));
 });
 
-gulp.task('watch', function (done) {
+gulp.task('watch', function () {
   // Watching files
   gulp.watch(
        [dirs.app + '/**/*.js',
+        '!' + dirs.app + '/js/partials/**/*.js',
          dirs.app + '/styles/**/*.less',
          dirs.app + '/**/*.html'],
-       ['lint:js','scripts','styles','source']
-     ).on('end', done);
+       ['lint:js','reload']
+     );
+});
+
+gulp.task('reload', ['scripts','styles','source'], function () {
+  gulp.src(dirs.dist + '/**/*')
+      .pipe(plugins.connect.reload());
 });
 
 gulp.task('karma', function (done) {
@@ -132,9 +125,6 @@ gulp.task('connect', function() {
     });
 });
 
-gulp.task('copy', ['clean','scripts','styles','source']);
-
-
 // -------- TEST TASK
 
 gulp.task('test', function (done) {
@@ -150,12 +140,13 @@ gulp.task('test', function (done) {
 gulp.task('build', function (done) {
   runSequence('clean',
       ['test','lint:js'],
-      'copy',
+      ['scripts','styles','source'],
   done);
 });
 
 gulp.task('dev', function (done) {
-   runSequence('clean','copy',
+   runSequence('clean',
+        ['scripts','styles','source'],
         ['connect','watch','karma'],
    done);
 });
