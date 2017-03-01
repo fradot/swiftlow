@@ -24,8 +24,20 @@
     "tests",
     "app_spec"
   ],
-  "devDependencies": {
+  "dependencies": {
     "bootstrap": "^3.3.7"
   },
-  "dependencies": {}
+  "overrides": {
+      "bootstrap": {
+        "main": [
+          "dist/js/*.min.js",
+          "dist/css/*.min.css"
+        ]
+      },
+      "jquery": {
+        "main": [
+          "dist/jquery.min.js"
+        ]
+      }
+  }
 }

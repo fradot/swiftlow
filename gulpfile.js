@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     buffer = require('vinyl-buffer'),
     gutil = require('gulp-util'),
     templateCache = require('gulp-angular-templatecache'),
+    mainBowerFiles = require('gulp-main-bower-files'),
     // Temporary solution until gulp 4
     // https://github.com/gulpjs/gulp/issues/355
     runSequence = require('run-sequence'),
@@ -92,6 +93,14 @@ gulp.task('source', function () {
   }).pipe(gulp.dest(dirs.dist));
 });
 
+
+gulp.task('bower', function() {
+  // Loading bower components
+  return gulp.src('./bower.json')
+      .pipe(mainBowerFiles())
+      .pipe(gulp.dest(dirs.dist + '/vendor'));
+});
+
 gulp.task('watch', function () {
   // Watching files
   gulp.watch(
@@ -99,7 +108,7 @@ gulp.task('watch', function () {
         '!' + dirs.app + '/js/partials/**/*.js',
          dirs.app + '/styles/**/*.less',
          dirs.app + '/**/*.html'],
-       ['lint:js','reload']
+       ['lint:js','reload','bower']
      );
 });
 
@@ -134,19 +143,20 @@ gulp.task('test', function (done) {
    },done).start();
  });
 
+// TODO create gulp inject task. 
 
 // -------- MAIN TASKS
 
 gulp.task('build', function (done) {
   runSequence('clean',
       ['test','lint:js'],
-      ['scripts','styles','source'],
+      ['scripts','styles','source','bower'],
   done);
 });
 
 gulp.task('dev', function (done) {
    runSequence('clean',
-        ['scripts','styles','source'],
+        ['scripts','styles','source','bower'],
         ['connect','watch','karma'],
    done);
 });
