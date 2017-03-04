@@ -24,7 +24,8 @@ gulp.task('lint:js', function () {
   return gulp.src([
       'gulpfile.js',
       dirs.app + '/**/*.js',
-      dirs.test + '/**/*.spec.js'
+      dirs.test + '/**/*.spec.js',
+      '!' + dirs.app + '/vendor'
   ]).pipe(plugins.plumber())
     .pipe(plugins.jshint())
     .pipe(plugins.jshint.reporter('jshint-stylish'))
@@ -143,7 +144,7 @@ gulp.task('test', function (done) {
    },done).start();
  });
 
-// TODO create gulp inject task. 
+// TODO create gulp inject task.
 
 // -------- MAIN TASKS
 

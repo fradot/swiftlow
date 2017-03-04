@@ -1,6 +1,6 @@
 node_modules
 npm-debug.log
 dist
-app/js/partials
+app/js/partials/**/*.js
 roadmap.txt
 bower_components

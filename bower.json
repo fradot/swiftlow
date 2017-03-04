@@ -25,19 +25,40 @@
     "app_spec"
   ],
   "dependencies": {
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "animate.css": "^3.5.2",
+    "font-awesome": "fontawesome#^4.7.0",
+    "angular-material": "^1.1.3"
   },
   "overrides": {
-      "bootstrap": {
-        "main": [
-          "dist/js/*.min.js",
-          "dist/css/*.min.css"
-        ]
-      },
-      "jquery": {
-        "main": [
-          "dist/jquery.min.js"
-        ]
-      }
+    "bootstrap": {
+      "main": [
+        "dist/js/*.min.js",
+        "dist/css/*.min.css",
+        "dist/fonts/*"
+      ]
+    },
+    "jquery": {
+      "main": [
+        "dist/jquery.min.js"
+      ]
+    },
+    "animate.css": {
+      "main": [
+        "animate.min.css"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.min.css",
+        "fonts/*"
+      ]
+    },
+    "angular-material": {
+      "main": [
+        "angular-material.min.css",
+        "angular-material.min.js"
+      ]
+    }
   }
 }
