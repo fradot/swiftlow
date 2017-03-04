@@ -28,7 +28,9 @@
     "bootstrap": "^3.3.7",
     "animate.css": "^3.5.2",
     "font-awesome": "fontawesome#^4.7.0",
-    "angular-material": "^1.1.3"
+    "angular-material": "^1.1.3",
+    "angular-bootstrap": "^2.5.0",
+    "angular": "^1.6.2"
   },
   "overrides": {
     "bootstrap": {
@@ -55,9 +57,11 @@
       ]
     },
     "angular-material": {
+      "ignore": true
+    },
+    "angular":{
       "main": [
-        "angular-material.min.css",
-        "angular-material.min.js"
+        "angular.js"
       ]
     }
   }
