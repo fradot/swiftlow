@@ -1,10 +1,12 @@
 import angular from 'angular';
 import appConstants from './config/app.constants';
 import appConfig from './config/app.config';
-import ngAria from '../vendor/angular-aria/angular-aria.js';
-import ngAnimate from '../vendor/angular-animate/angular-animate.js';
-import ngMaterial from '../vendor/angular-material/angular-material.js';
+import 'angular-aria';
+import 'angular-animate';
+import 'angular-material';
 import 'angular-ui-router';
+import 'angular-touch';
+import 'angular-bootstrap';
 
 import './layout';
 import './services';
@@ -18,6 +20,7 @@ const requires = [
   'app.home',
   'app.partials',
   'ngMaterial'
+  // 'ui.bootstrap'
 ];
 
 export default angular.module('swiftlow', requires)
