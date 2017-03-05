@@ -10,17 +10,19 @@ import 'angular-bootstrap';
 
 import './layout';
 import './services';
+import './filters';
 import './home';
 import './partials';
 
 const requires = [
   'ui.router',
   'app.services',
+  'app.filters',
   'app.layout',
   'app.home',
   'app.partials',
+  'ui.bootstrap',
   'ngMaterial'
-  // 'ui.bootstrap'
 ];
 
 export default angular.module('swiftlow', requires)

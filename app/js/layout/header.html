@@ -1,7 +1,7 @@
 <!-- header -->
 <header id="header" class="app-header navbar" role="menu">
   <!-- navbar header -->
-  <div class="navbar-header bg-dark">
+  <div class="navbar-header bg-white">
     <button class="pull-right visible-xs dk" ui-toggle-class="show" target=".navbar-collapse">
       <i class="glyphicon glyphicon-cog"></i>
     </button>
@@ -9,10 +9,9 @@
       <i class="glyphicon glyphicon-align-justify"></i>
     </button>
     <!-- brand -->
-    <a href="#/" class="navbar-brand text-lt">
-      <i class="fa fa-btc"></i>
-      <img src="img/logo.png" alt="." class="hide">
-      <span class="hidden-folded m-l-xs">Angulr</span>
+    <a ui-sref="app.home" class="navbar-brand text-lt">
+      <img src="img/logo-temp.png" alt=".">
+      <span ng-bind="::$ctrl.appName | capitalize" class="hidden-folded m-l-xs"></span>
     </a>
     <!-- / brand -->
   </div>
@@ -167,7 +166,7 @@
     <form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" data-target=".navbar-collapse" role="search">
       <div class="form-group">
         <div class="input-group">
-          <input type="text" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="Search projects...">
+          <input type="text" class="form-control input-sm bg-light no-border rounded padder" placeholder="Search projects...">
           <span class="input-group-btn">
             <button type="submit" class="btn btn-sm bg-light rounded"><i class="fa fa-search"></i></button>
           </span>
