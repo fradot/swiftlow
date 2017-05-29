@@ -12,8 +12,7 @@ module.exports = function(config) {
       './app/js/app.js',
       './node_modules/angular-mocks/angular-mocks.js',
       './node_modules/angular-ui-router/release/angular-ui-router.js',
-      './app_spec/services/**/*.js',
-      './app_spec/home/**/*.js'
+      './app_spec/**/*.js'
     ],
 
    preprocessors: {

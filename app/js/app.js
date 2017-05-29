@@ -11,7 +11,7 @@ import 'angular-bootstrap';
 import './layout';
 import './services';
 import './filters';
-import './home';
+import './timeline';
 import './partials';
 
 const requires = [
@@ -19,7 +19,7 @@ const requires = [
   'app.services',
   'app.filters',
   'app.layout',
-  'app.home',
+  'app.timeline',
   'app.partials',
   'ui.bootstrap',
   'ngMaterial'

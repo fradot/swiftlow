@@ -1,4 +1,4 @@
-export default class HomeController {
+export default class TimelineController {
 
   constructor(UsersService) {
 
