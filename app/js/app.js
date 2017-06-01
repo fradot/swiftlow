@@ -1,6 +1,6 @@
 import angular from 'angular';
-import appConstants from './config/app.constants';
-import appConfig from './config/app.config';
+import swiftlowConstants from './config/app.constants';
+import swiftlowConfig from './config/app.config';
 import 'angular-aria';
 import 'angular-animate';
 import 'angular-material';
@@ -25,9 +25,10 @@ const requires = [
   'ngMaterial'
 ];
 
+
 export default angular.module('swiftlow', requires)
-        .constant('AppConstants', appConstants)
-        .config(appConfig);
+        .constant('SwiftlowConstants', swiftlowConstants)
+        .config(swiftlowConfig);
 
 
 angular.bootstrap(document, ['swiftlow'], {

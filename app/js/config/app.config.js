@@ -1,4 +1,4 @@
-function AppConfig($stateProvider, $urlRouterProvider) {
+function SwiftlowConfig($stateProvider, $urlRouterProvider) {
   'ngInject';
 
   $stateProvider
@@ -11,4 +11,4 @@ function AppConfig($stateProvider, $urlRouterProvider) {
 
 }
 
-export default AppConfig;
+export default SwiftlowConfig;

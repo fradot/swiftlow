@@ -1,6 +1,9 @@
 class SwiftlowFooterController {
-  constructor() {
+  constructor(SwiftlowConstants) {
     'ngInject';
+
+    this.appVersion = SwiftlowConstants.appVersion;
+
   }
 }
 

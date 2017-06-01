@@ -1,8 +1,8 @@
 class SwiftlowHeaderController {
-  constructor(AppConstants) {
+  constructor(SwiftlowConstants) {
     'ngInject';
 
-    this.appName = AppConstants.appName;
+    this.appName = SwiftlowConstants.appName;
   }
 }
 
