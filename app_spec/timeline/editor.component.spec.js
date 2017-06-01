@@ -11,8 +11,8 @@ describe('Editor', function () {
   }));
 
   it('should render the editor', function() {
-    var title = element.find('p');
-    expect(title.text()).toBe('Creates tasks, notes and other istructions here:');
+    var title = element.find('button');
+    expect(title.text()).toBe('Submit');
   });
 
 });
