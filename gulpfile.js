@@ -102,10 +102,6 @@ gulp.task('source', function () {
 
 
 gulp.task('bower', function() {
-  // check folder
-  if (!fs.existsSync("./bower_components")){
-    fs.mkdirSync("./bower_components");
-  }
   // Loading bower components
   return gulp.src('./bower.json')
       .pipe(mainBowerFiles())
@@ -123,7 +119,7 @@ gulp.task('watch', function () {
      );
 });
 
-gulp.task('reload', ['scripts','styles','source'], function () {
+gulp.task('reload', ['scripts','styles','source','bower'], function () {
   gulp.src(dirs.dist + '/**/*')
       .pipe(plugins.connect.reload());
 });
@@ -167,6 +163,7 @@ gulp.task('build', function (done) {
 
 gulp.task('dev', function (done) {
    runSequence('clean',
+        ['lint:js'],
         ['scripts','styles','source','bower'],
         ['connect','watch','karma'],
    done);
