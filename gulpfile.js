@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')(),
     browserify = require('browserify'),
     babelify = require('babelify'),
+    fs = require('fs'),
     ngAnnotate = require('browserify-ngannotate'),
     source = require('vinyl-source-stream'),
     buffer = require('vinyl-buffer'),
@@ -42,6 +43,11 @@ gulp.task('clean', function (done) {
 });
 
 gulp.task('partials', function () {
+  // check folder
+  if (!fs.existsSync(dirs.app + "/js/partials")){
+    fs.mkdirSync(dirs.app + "/js/partials");
+  }
+
   return gulp.src(dirs.app + '/js/**/*.html')
     .pipe(templateCache(
       'index.js', {
@@ -137,7 +143,7 @@ gulp.task('connect', function() {
 
 // -------- TEST TASK
 
-gulp.task('test', function (done) {
+gulp.task('test',['build'], function (done) {
    new Server({
      configFile: __dirname + '/karma.conf.js',
      singleRun: true
@@ -150,7 +156,7 @@ gulp.task('test', function (done) {
 
 gulp.task('build', function (done) {
   runSequence('clean',
-      ['test','lint:js'],
+      ['lint:js'],
       ['scripts','styles','source','bower'],
   done);
 });

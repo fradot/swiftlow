@@ -8,6 +8,6 @@ branches:
     - master
 
 before_script:
-  - npm install -g gulp
+  - npm install
 
-script: gulp build && gulp test
+script: gulp test
