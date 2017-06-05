@@ -27,7 +27,8 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "animate.css": "^3.5.2",
-    "font-awesome": "fontawesome#^4.7.0"
+    "font-awesome": "fontawesome#^4.7.0",
+    "textAngular": "^1.5.16"
   },
   "overrides": {
     "bootstrap": {

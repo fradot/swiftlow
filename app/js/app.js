@@ -8,11 +8,17 @@ import 'angular-ui-router';
 import 'angular-touch';
 import 'angular-bootstrap';
 
+// TextAngular
+import textAngularRangy from 'textangular/dist/textAngular-rangy.min';
+import textAngularSanitize from 'textangular/dist/textAngular-sanitize.min';
+import textAngular from 'textangular/dist/textAngular.min';
+
 import './layout';
 import './services';
 import './filters';
 import './timeline';
 import './partials';
+import './components';
 
 const requires = [
   'ui.router',
@@ -21,8 +27,10 @@ const requires = [
   'app.layout',
   'app.timeline',
   'app.partials',
+  'app.components',
   'ui.bootstrap',
-  'ngMaterial'
+  'ngMaterial',
+  'textAngular'
 ];
 
 

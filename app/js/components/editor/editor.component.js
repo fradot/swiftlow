@@ -1,12 +1,16 @@
 class EditorController {
   constructor() {
     'ngInject';
+
+    this.content = "Type here...";
+
   }
 }
 
 let Editor = {
   controller: EditorController,
-  templateUrl: 'timeline/editor.html'
+  templateUrl: 'components/editor/editor.html',
+  content:'='
 };
 
 export default Editor;

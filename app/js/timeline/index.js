@@ -9,7 +9,4 @@ TimelineModule.config(TimelineConfig);
 import TimelineController from './timeline.controller';
 TimelineModule.controller('TimelineController', TimelineController);
 
-import TimelineEditor from './editor.component';
-TimelineModule.component('timelineEditor', TimelineEditor);
-
 export default TimelineModule;

@@ -92,8 +92,8 @@ gulp.task('styles', function () {
 gulp.task('source', function () {
   return gulp.src([
       dirs.app + '/**/*',
-      '!' + dirs.app + '/styles{,/**/*.less}',
-      '!' + dirs.app + '/js{/*,/*/**.html,/**/*.js,/app.js}'
+      '!' + dirs.app + '/styles{,/**/*,/**/*.less}',
+      '!' + dirs.app + '/js{,/**/*,/*,/**/*.html,/**/*.js,/app.js}'
   ], {
       // Include hidden files by default
       dot: true
