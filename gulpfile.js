@@ -102,6 +102,10 @@ gulp.task('source', function () {
 
 
 gulp.task('bower', function() {
+  // check folder
+  if (!fs.existsSync("./bower_components")){
+    fs.mkdirSync("./bower_components");
+  }
   // Loading bower components
   return gulp.src('./bower.json')
       .pipe(mainBowerFiles())
@@ -143,7 +147,7 @@ gulp.task('connect', function() {
 
 // -------- TEST TASK
 
-gulp.task('test',['build'], function (done) {
+gulp.task('test',['clean','lint:js','partials'], function (done) {
    new Server({
      configFile: __dirname + '/karma.conf.js',
      singleRun: true
