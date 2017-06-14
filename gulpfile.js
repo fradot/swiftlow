@@ -115,7 +115,7 @@ gulp.task('watch', function () {
         '!' + dirs.app + '/js/partials/**/*.js',
          dirs.app + '/styles/**/*.less',
          dirs.app + '/**/*.html'],
-       ['lint:js','reload','bower']
+       ['lint:js','reload']
      );
 });
 
@@ -161,11 +161,19 @@ gulp.task('build', function (done) {
   done);
 });
 
-gulp.task('dev', function (done) {
+gulp.task('tdd', function (done) {
    runSequence('clean',
         ['lint:js'],
         ['scripts','styles','source','bower'],
         ['connect','watch','karma'],
+   done);
+});
+
+gulp.task('dev', function (done) {
+   runSequence('clean',
+        ['lint:js'],
+        ['scripts','styles','source','bower'],
+        ['connect','watch'],
    done);
 });
 

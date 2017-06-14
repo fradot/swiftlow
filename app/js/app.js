@@ -6,7 +6,7 @@ import 'angular-animate';
 import 'angular-material';
 import 'angular-ui-router';
 import 'angular-touch';
-import 'angular-bootstrap';
+import 'angular-ui-bootstrap';
 
 // TextAngular
 import textAngularRangy from 'textangular/dist/textAngular-rangy.min';
@@ -22,13 +22,13 @@ import './components';
 
 const requires = [
   'ui.router',
+  'ui.bootstrap',
   'app.services',
   'app.filters',
   'app.layout',
   'app.timeline',
   'app.partials',
   'app.components',
-  'ui.bootstrap',
   'ngMaterial',
   'textAngular'
 ];

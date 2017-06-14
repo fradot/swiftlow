@@ -17,4 +17,6 @@ describe('Timeline', function() {
     expect(TimelineController.users.length).toBeGreaterThan(1);
   });
 
+  // TODO: it should display the editor
+
 });
