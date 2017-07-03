@@ -143,11 +143,15 @@ gulp.task('connect', function() {
 
 // -------- TEST TASK
 
-gulp.task('test',['clean','lint:js','partials'], function (done) {
-   new Server({
-     configFile: __dirname + '/karma.conf.js',
-     singleRun: true
-   },done).start();
+gulp.task('test', function (done) {
+   runSequence('clean',
+       ['lint:js'],
+       ['partials']);
+
+       new Server({
+         configFile: __dirname + '/karma.conf.js',
+         singleRun: true
+       },done).start();
  });
 
 // TODO create gulp inject task.
