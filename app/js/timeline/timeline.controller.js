@@ -8,13 +8,13 @@ export default class TimelineController {
     this._uibModal = $uibModal;
   }
 
-  openEditorModal () {
-     this._uibModal.open({
-       ariaLabelledBy: 'modal-title',
-       ariaDescribedBy: 'modal-body',
-       animation: true,
-       component: 'editor'
-     });
-   }
+  //openEditorModal () {
+  //   this._uibModal.open({
+  //     ariaLabelledBy: 'modal-title',
+  //     ariaDescribedBy: 'modal-body',
+  //     animation: true,
+  //     component: 'editor'
+  //   });
+  // }
 
 }
