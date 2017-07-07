@@ -6,6 +6,11 @@ export default class TimelineController {
 
     this.users = UsersService.all();
     this._uibModal = $uibModal;
+    this.instruction = null;
+  }
+
+  onPost(instruction) {
+    this.instruction = instruction;
   }
 
   //openEditorModal () {

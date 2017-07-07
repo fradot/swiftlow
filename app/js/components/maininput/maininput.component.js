@@ -1,16 +1,20 @@
 class MainInputController {
   constructor() {
     'ngInject';
-
-    this.content = "Type here...";
-
   }
+
+  onPost() {
+    this.onUpdate({instruction: this.instruction});
+  }
+
 }
 
 let MainInput = {
   controller: MainInputController,
   templateUrl: 'components/maininput/maininput.html',
-  content:'='
+  bindings: {
+      onUpdate: '&'
+  }
 };
 
 export default MainInput;
