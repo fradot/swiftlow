@@ -12,11 +12,8 @@ describe('Timeline', function() {
     expect(TimelineController).toBeDefined();
   });
 
-  it('should contain an array of users', () => {
-    expect(TimelineController.users).toBeDefined();
-    expect(TimelineController.users.length).toBeGreaterThan(1);
+  it('should contain an array of tobjects', () => {
+    expect(TimelineController.tObjs).toBeDefined();
   });
-
-  // TODO: it should display the editor
 
 });

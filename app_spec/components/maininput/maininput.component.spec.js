@@ -1,5 +1,5 @@
 describe('MainInput', function () {
-  var element,scope;
+  let element,scope;
 
   beforeEach(angular.mock.module(('swiftlow')));
 
@@ -10,8 +10,8 @@ describe('MainInput', function () {
     scope.$apply();
   }));
 
-  it('should render the input', function() {
-    var input = element.find('input');
+  it('should render the input', () => {
+    let input = element.find('input');
     expect(input.length).toBeGreaterThan(0);
   });
 

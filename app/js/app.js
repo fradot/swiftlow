@@ -19,6 +19,9 @@ import './filters';
 import './timeline';
 import './partials';
 import './components';
+import './tcomponents';
+import './directives';
+
 
 const requires = [
   'ui.router',
@@ -29,6 +32,8 @@ const requires = [
   'app.timeline',
   'app.partials',
   'app.components',
+  'app.directives',
+  'app.tcomponents',
   'ngMaterial',
   'textAngular'
 ];

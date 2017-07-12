@@ -9,6 +9,8 @@ module.exports = function(config) {
     frameworks: ['jasmine','browserify'],
 
     files: [
+      './bower_components/jquery/dist/jquery.min.js',
+      './node_modules/jasmine-jquery/lib/jasmine-jquery.js',
       './app/js/app.js',
       './node_modules/angular-mocks/angular-mocks.js',
       './node_modules/angular-ui-router/release/angular-ui-router.js',
