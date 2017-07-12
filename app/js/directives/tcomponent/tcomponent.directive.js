@@ -1,8 +1,8 @@
-class TComponentController {
-  constructor() {
-    'ngInject';
-  }
-}
+const tconstants = {
+  CLASS_ATTR: 'class="tobj ',
+  TOBJ_ATTR: ' tobj="tObj" ',
+  ON_UPDATE_ATTR: 'on-update="'
+};
 
 let TComponentDirective = function($compile) {
   'ngInject';
@@ -13,9 +13,9 @@ let TComponentDirective = function($compile) {
     transclude: true,
     link: function (scope, element, attrs, ctrl) {
       scope.$watch(attrs.tobj, function(tObj) {
-        let tobjAttr =' tobj="tObj" ';
-        let onUpdateAttr = 'on-update="'.concat(attrs.onUpdate).concat('" ');
-        let klass = 'class="tobj ' + tObj.type + '" ';
+        let tobjAttr = tconstants.TOBJ_ATTR;
+        let onUpdateAttr = tconstants.ON_UPDATE_ATTR.concat(attrs.onUpdate).concat('" ');
+        let klass = tconstants.CLASS_ATTR.concat(tObj.type).concat('" ');
 
         // building component
         element.html('<'.concat(tObj.type)
@@ -23,7 +23,7 @@ let TComponentDirective = function($compile) {
                         .concat(onUpdateAttr)
                         .concat(klass)
                         .concat('/>'));
-                        
+
         $compile(element.contents())(scope);
       });
     }

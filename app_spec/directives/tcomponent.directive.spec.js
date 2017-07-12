@@ -36,9 +36,10 @@ describe('TComponent Directive', function () {
 
     let expectedtObj = todoTobj.instance;
 
+    let checkbox = $('input[type="checkbox"]',element.find("todo"));
+    
     // should be true
     expectedtObj.closed = true;
-    let checkbox = $('input[type="checkbox"]',element.find("todo"));
     checkbox.trigger("click");
     expect(scope.updateTobj).toHaveBeenCalledWith(expectedtObj);
 

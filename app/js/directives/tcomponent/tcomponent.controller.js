@@ -1,0 +1,5 @@
+class TComponentController {
+  constructor() {
+    'ngInject';
+  }
+}
