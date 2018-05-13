@@ -19,7 +19,7 @@
                 <span class="arrow right pull-up visible-left"></span>
                 <div class="text-lt m-b-sm"><h5>{{tObj.type | uppercase}}</h5></div>
                 <div class="panel-body pull-in b-t b-light">
-                  <tcomponent tobj="tObj" on-update="$ctrl.ontObjUpdate(tObj)"/>
+                  <tcomponent action="{{tObj.taction}}" tobj="tObj" on-update="$ctrl.ontObjUpdate(tObj)"/>
                 </div>
               </div>
             </div>
@@ -33,5 +33,5 @@
     </div>
 
     <div id="tmln-maininput" class="app-footer app-footer-fixed">
-      <maininput on-update="$ctrl.onPost(instruction)"></maininput>
+      <maininput on-update="$ctrl.onPost(tObjRaw)"></maininput>
     </div>

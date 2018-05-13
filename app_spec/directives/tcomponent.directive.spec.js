@@ -1,25 +1,26 @@
 describe('TComponent Directive', function () {
-  let element,scope,
-  todoTobj = {
-    type:"todo",
-    created: "11/07/2017 13:00:00",
-    instance: {
-        id:2,
-        dueDate: "13/07/2017 13:00:00",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        closed: false,
-        assignee: "Jane Doe"
-    }
+  let element,scope;
+  let todo = {
+      id:1,
+      type:"todo",
+      created: "10/07/2017 17:00:50",
+      raw: "TODO 12/07/2017 at 17:00:50 Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      tcompid:1,
+      dueDate: "12/07/2017 17:00:50",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      closed: false,
+      assignee: "John Doe",
+      taction: "view"
   };
 
   beforeEach(angular.mock.module(('swiftlow')));
 
   beforeEach(inject(($rootScope, $compile) => {
     scope = $rootScope.$new();
-    scope.tObj = todoTobj;
+    scope.tObj = todo;
     scope.updateTobj = jasmine.createSpy();
-    element = angular.element('<tcomponent tobj="tObj" on-update="updateTobj(tObj)"/>');
-    element = $compile(element)(scope);
+    let temp = angular.element('<tcomponent action="view" tobj="tObj" on-update="updateTobj(tObj)"/>');
+    element = $compile(temp)(scope);
     scope.$apply();
   }));
 
@@ -28,16 +29,16 @@ describe('TComponent Directive', function () {
   });
 
   it('should render a tcomponent of type todo', () => {
-    let todoTcomponent = element.find('todo');
+    let todoTcomponent = element.find('.todo');
     expect(todoTcomponent.length).toBeGreaterThan(0);
   });
 
   it('should update the tobject after the todo has been closed or opened', () => {
 
-    let expectedtObj = todoTobj.instance;
+    let expectedtObj = todo;
 
-    let checkbox = $('input[type="checkbox"]',element.find("todo"));
-    
+    let checkbox = $('input[type="checkbox"]',element.find(".todo"));
+
     // should be true
     expectedtObj.closed = true;
     checkbox.trigger("click");

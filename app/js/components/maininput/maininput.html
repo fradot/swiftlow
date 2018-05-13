@@ -1,7 +1,7 @@
 <div class="wrapper b-t bg-light" id="maininput">
   <form ng-submit="$ctrl.onPost()">
     <div class="input-group">
-      <input type="text" ng-model="$ctrl.instruction" class="form-control input-lg" placeholder="Type here...">
+      <input type="text" ng-model="tobjraw" ng-change="$ctrl.onChange(tobjraw)" class="form-control input-lg" placeholder="Type here...">
       <span class="input-group-btn">
         <input type="submit" class="btn btn-info btn-lg" value="POST"></input>
       </span>

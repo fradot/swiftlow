@@ -6,17 +6,22 @@ export default class TimelineController {
 
     this.users = UsersService.all();
     this._uibModal = $uibModal;
-    this.instruction = null;
-
     this.tObjs = TObjectsService.all();
+
   }
 
   ontObjUpdate(tObj) {
     console.log(tObj);
   }
 
-  onPost(instruction) {
-    this.instruction = instruction;
+  onPost(tObjRaw) {
+    console.log(this.tObjs);
+    this.tObjs.push(tObjRaw);
+    // TODO: scroll as soon as a new element is added
+  }
+
+  createTObj() {
+
   }
 
 }

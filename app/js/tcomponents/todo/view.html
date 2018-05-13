@@ -1,0 +1,16 @@
+<div class="row col-sm-12">
+  <div class="text-lt col-sm-12">{{$ctrl.data.description}} |
+    <small>{{$ctrl.data.assignee}}</small>
+  </div>
+  <div class="col-sm-12">
+    <div class="col-sm-2 text-left">
+      <input type="checkbox"
+        ng-model="$ctrl.data.closed"
+        ng-change="$ctrl.update()"
+        name="closed">&nbsp;Closed</input>
+    </div>
+   <div class="col-sm-10 text-right">
+        <small>due by: 19 february 2014 19:34 <a class="text-info" href="#">change</a></small>
+    </div>
+  </div>
+</div>

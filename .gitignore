@@ -4,3 +4,6 @@ dist
 app/js/partials
 roadmap.txt
 bower_components
+.settings
+.project
+.tern-project

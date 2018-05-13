@@ -8,4 +8,8 @@ servicesModule.service('UsersService', UsersService);
 import TObjectsService from './tobjects.service';
 servicesModule.service('TObjectsService', TObjectsService);
 
+import TComponentsService from './tcomponents.service';
+servicesModule.service('TComponentsService', TComponentsService);
+
+
 export default servicesModule;
