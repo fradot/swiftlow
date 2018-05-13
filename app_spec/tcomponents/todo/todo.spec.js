@@ -26,10 +26,10 @@ describe('Todo Tcomponent', function () {
 
   it('should create a precompiled todo form.', () => {
     let checkboxEl = element.find('input[name="closed"]');
-    let inputEl = element.find('text-angular');
+    let inputEl = element.find('textarea[name="description"]');
     expect(checkboxEl.length).toBeGreaterThan(0);
     expect(inputEl.length).toBeGreaterThan(0);
-    expect(inputEl.find('p').text()).toEqual("rename the class Intersection.java to IntesectionPoint.java.");
+    expect(inputEl.text()).toEqual("rename the class Intersection.java to IntesectionPoint.java.");
     expect(checkboxEl).not.toBeChecked();
   });
 });
