@@ -18,13 +18,12 @@ describe('TComponent Directive', function () {
   beforeEach(inject(($rootScope, $compile) => {
     scope = $rootScope.$new();
     scope.tObj = todo;
-    scope.updateTobj = jasmine.createSpy();
     let temp = angular.element('<tcomponent action="view" tobj="tObj" on-update="updateTobj(tObj)"/>');
     element = $compile(temp)(scope);
     scope.$apply();
   }));
 
-  afterEach(function() {
+  afterEach(() => {
     scope.$destroy();
   });
 
@@ -34,21 +33,18 @@ describe('TComponent Directive', function () {
   });
 
   it('should update the tobject after the todo has been closed or opened', () => {
-
     let expectedtObj = todo;
-
-    let checkbox = $('input[type="checkbox"]',element.find(".todo"));
+    let $checkbox = $('input[name="closed"]', element.find(".todo"));
 
     // should be true
     expectedtObj.closed = true;
-    checkbox.trigger("click");
-    expect(scope.updateTobj).toHaveBeenCalledWith(expectedtObj);
+    $checkbox.trigger("click");
+    expect(scope.tObj.closed).toBe(true);
 
     // should be false
     expectedtObj.closed = false;
-    checkbox.trigger("click");
-    expect(scope.updateTobj).toHaveBeenCalledWith(expectedtObj);
-
+    $checkbox.trigger("click");
+    expect(scope.tObj.closed).toBe(false);
   });
 
 });

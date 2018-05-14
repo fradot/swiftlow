@@ -61,7 +61,7 @@ gulp.task('partials', function () {
 
 gulp.task('scripts',['partials'], function (done) {
   return browserify(dirs.app + '/js/app.js')
-    .transform(babelify, { "presets": ["es2015"] })
+    .transform(babelify, { "presets": ["env"] })
     .transform(ngAnnotate)
     .bundle()
     .pipe(source('app.js'))

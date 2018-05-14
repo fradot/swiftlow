@@ -29,7 +29,7 @@ describe('Todo Tcomponent', function () {
     let inputEl = element.find('textarea[name="description"]');
     expect(checkboxEl.length).toBeGreaterThan(0);
     expect(inputEl.length).toBeGreaterThan(0);
-    expect(inputEl.text()).toEqual("rename the class Intersection.java to IntesectionPoint.java.");
+    expect(inputEl.val()).toEqual("rename the class Intersection.java to IntesectionPoint.java.");
     expect(checkboxEl).not.toBeChecked();
   });
 });
