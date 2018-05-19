@@ -37,33 +37,7 @@ class TodoCreateController extends TComponentController {
   }
 
   initDatePicker(){
-    let self = this;
-
-    this.today = function() {
-      self.dt = new Date();
-    };
-    this.today();
-
-    this.clear = function () {
-      self.dt = null;
-    };
-
-    // Disable weekend selection
-    this.disabled = function(date, mode) {
-      return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
-    };
-
-    this.toggleMin = function() {
-      self.minDate = self.minDate ? null : new Date();
-    };
     this.toggleMin();
-
-    this.open = function($event) {
-      $event.preventDefault();
-      $event.stopPropagation();
-
-      self.opened = true;
-    };
 
     this.dateOptions = {
       formatYear: 'yy',
@@ -71,19 +45,42 @@ class TodoCreateController extends TComponentController {
       class: 'datepicker'
     };
 
-    this.initDate = new Date('2016-15-20');
-    this.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    this.format = this.formats[0];
+    this.format = 'dd MMMM yyyy';
+    this.opened = false;
+  }
+
+  clear() {
+    this.tDueDate = null;
+  }
+
+  disabled(date, mode) {
+    return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+  }
+
+  toggleMin() {
+    this.minDate = this.minDate ? null : new Date();
+  }
+
+  open($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    this.opened = true;
   }
 
   initValues(group){
-    this.tDueDate = group[2];
-    this.tTime = group[3] +
-      ((group[4] !== undefined) ? ':' + group[4] : '') +
-      ((group[5] !== undefined) ? ':' + group[5] : '');
-    this.tText = group[6];
+    let todayDate = new Date();
 
-    if(this.tDueDate === ""){throw "Todo due date not defined.";}
+    this.tTime = group[4] +
+      ((group[5] !== undefined) ? ':' + group[5] : '') +
+      ((group[6] !== undefined) ? ':' + group[6] : '');
+    this.tText = group[7];
+
+    if(group[2] === ""){
+      throw "Todo due date not defined.";
+    } else {
+        this.tDueDate = new Date(group[2]);
+    }
     if(this.tText === ""){throw "Todo text not defined.";}
     if(this.tTime === "" || /(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)/g.exec(this.tTime) === null) {
       throw "Todo wrong due time definition.";

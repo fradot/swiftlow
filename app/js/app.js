@@ -3,6 +3,7 @@ import swiftlowConstants from './config/app.constants';
 import swiftlowConfig from './config/app.config';
 import 'angular-aria';
 import 'angular-animate';
+import 'angular-sanitize';
 import 'angular-material';
 import 'angular-ui-router';
 import 'angular-touch';
@@ -24,9 +25,12 @@ import './tcomponents';
 import './directives';
 
 const requires = [
+  'ngAnimate',
+  'ngSanitize',
+  'ngMaterial',
   'ui.router',
-  'ui.bootstrap',
   'ui.tinymce',
+  'ui.bootstrap',
   'app.services',
   'app.filters',
   'app.layout',
@@ -34,8 +38,7 @@ const requires = [
   'app.partials',
   'app.components',
   'app.directives',
-  'app.tcomponents',
-  'ngMaterial'
+  'app.tcomponents'
 ];
 
 export default angular.module('swiftlow', requires)

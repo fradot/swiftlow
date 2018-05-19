@@ -11,7 +11,7 @@ export default class TComponentsService {
           name:"todo",
           description: "create a todo",
           created: "10/07/2017 17:00:50",
-          regexp:"^(:todo\\s(today|tomorrow|monday|tuesday|wednesday|thursday|friday|saturday|sunday|[0-9]{1,2}(?:\\/[0-9]{1,2}\\/|\\sjanuary\\s|\\sfebruary\\s|\\smarch\\s|\\sapril\\s|\\smay\\s|\\sjune\\s|\\sjuly\\s|\\saugust\\s|\\sseptember\\s|\\soctober\\s|\\snovember\\s|\\sdecember\\s)[0-9]{2,4})\\s?at?\\s?(?:(?:([01]?\\d|2[0-3]):)?([0-5]?\\d):)?([0-5]?\\d)\\s(.*)?)$",
+          regexp:"^(:todo\\s(today|tomorrow|monday|tuesday|wednesday|thursday|friday|saturday|sunday|[0-9]{1,2}(\\sJan\\s|\\sFeb\\s|\\sMar\\s|\\sApr\\s|\\sMay\\s|\\sJun\\s|\\sJul\\s|\\sAug\\s|\\sSep\\s|\\sOct\\s|\\sNov\\s|\\sDec\\s)[0-9]{2,4})\\s?at?\\s?(?:(?:([01]?\\d|2[0-3]):)?([0-5]?\\d):)?([0-5]?\\d)\\s(.*)?)$",
           nlpexp:'',
           tset: [1],
           taction:[
@@ -44,6 +44,15 @@ export default class TComponentsService {
           regexp:`^(TRIP)$`,
           nlpexp:'',
           tset: [3]
+        },
+        {
+          id:4,
+          name:"help",
+          description: "how to use it",
+          created: "19/05/2018 18:01:50",
+          regexp:`^(:help)$`,
+          nlpexp:'',
+          tset: [1,2,3]
         }
       ];
     }

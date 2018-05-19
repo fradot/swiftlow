@@ -3,7 +3,7 @@ describe('Todo Tcomponent', function () {
   let todo = {
     id: 1,
     type: 'todo',
-    raw: ":todo 19 february 2019 at 19:01 rename the class Intersection.java to IntesectionPoint.java.",
+    raw: ":todo 19 Feb 2019 at 19:01 rename the class Intersection.java to IntesectionPoint.java.",
     tcompid: 1,
     taction: 'create',
     created: new Date().toString()
@@ -30,6 +30,6 @@ describe('Todo Tcomponent', function () {
 
     expect(ctrl.tText).toEqual('rename the class Intersection.java to IntesectionPoint.java.');
     expect(checkboxEl).not.toBeChecked();
-    expect(checkboxEl.length).toBeGreaterThan(0);
+    expect(ctrl.tDueDate.getTime()).toEqual(new Date('19 Feb 2019').getTime());
   });
 });
