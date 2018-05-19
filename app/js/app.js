@@ -8,6 +8,12 @@ import 'angular-ui-router';
 import 'angular-touch';
 import 'angular-ui-bootstrap';
 
+// TinyMCE editor
+import tinymce from 'tinymce';
+import 'angular-ui-tinymce';
+tinymce.baseURL = 'vendor/tinymce';
+
+// App
 import './layout';
 import './services';
 import './filters';
@@ -17,10 +23,10 @@ import './components';
 import './tcomponents';
 import './directives';
 
-
 const requires = [
   'ui.router',
   'ui.bootstrap',
+  'ui.tinymce',
   'app.services',
   'app.filters',
   'app.layout',
@@ -32,11 +38,9 @@ const requires = [
   'ngMaterial'
 ];
 
-
 export default angular.module('swiftlow', requires)
         .constant('SwiftlowConstants', swiftlowConstants)
         .config(swiftlowConfig);
-
 
 angular.bootstrap(document, ['swiftlow'], {
   strictDi: true

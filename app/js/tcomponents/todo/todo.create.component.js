@@ -14,7 +14,8 @@ class TodoCreateController extends TComponentController {
     let regexp = new RegExp(tcomp[0].regexp,'g'); // TODO: double slashes needed to make it work.
     let group;
 
-    this.initDatePicker();
+    this.initEditor(); // TODO switch to the component editor
+    this.initDatePicker(); // TODO create a specific component
 
     while((group = regexp.exec(raw)) !== null) {
       try {
@@ -26,6 +27,13 @@ class TodoCreateController extends TComponentController {
     if(group === null) {
       // show todo contextual help
     }
+  }
+
+  initEditor(){
+    this.tinymceOptions = {
+      plugins: 'link code',
+      toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
+    };
   }
 
   initDatePicker(){

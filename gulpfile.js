@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     buffer = require('vinyl-buffer'),
     gutil = require('gulp-util'),
     templateCache = require('gulp-angular-templatecache'),
+    // TODO: replace with gulp-npm-dist
     mainBowerFiles = require('gulp-main-bower-files'),
     // Temporary solution until gulp 4
     // https://github.com/gulpjs/gulp/issues/355
@@ -100,7 +101,7 @@ gulp.task('source', function () {
   }).pipe(gulp.dest(dirs.dist));
 });
 
-
+// TODO remove bower from build process
 gulp.task('bower', function() {
   // Loading bower components
   return gulp.src('./bower.json')

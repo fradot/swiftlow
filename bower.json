@@ -27,7 +27,8 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "animate.css": "^3.5.2",
-    "font-awesome": "fontawesome#^4.7.0"
+    "font-awesome": "fontawesome#^4.7.0",
+    "tinymce": "^4.7.12"
   },
   "overrides": {
     "bootstrap": {
@@ -51,6 +52,16 @@
       "main": [
         "css/font-awesome.min.css",
         "fonts/*"
+      ]
+    },
+    "tinymce": {
+      "main": [
+        "tinymce.min.js",
+        "jquery.tinymce.min.js",
+        "plugins/{link,code}/*",
+        "skins/lightgray/{fonts,img}/*",
+        "skins/lightgray/{content.inline.min.css,content.min.css,skin.ie7.min.css,skin.min.css,skin.mobile.min.css}",
+        "themes/{inlite,mobile,modern}/*"
       ]
     }
   }
