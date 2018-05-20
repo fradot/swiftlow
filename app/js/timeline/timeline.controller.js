@@ -1,11 +1,10 @@
 export default class TimelineController {
 
-  constructor(UsersService,$uibModal,TObjectsService) {
+  constructor(UsersService, TObjectsService, $window) {
 
     'ngInject';
 
     this.users = UsersService.all();
-    this._uibModal = $uibModal;
     this.tObjs = TObjectsService.all();
 
   }
@@ -17,7 +16,14 @@ export default class TimelineController {
   onPost(tObjRaw) {
     console.log(this.tObjs);
     this.tObjs.push(tObjRaw);
-    // TODO: scroll as soon as a new element is added
+  }
+
+  delete(tObj) {
+    this.tObjs.forEach((tEl, index) => {
+      if(tEl.id === tObj.id) {
+        this.tObjs.splice(index, 1);
+      }
+    });
   }
 
   createTObj() {

@@ -30,6 +30,9 @@ describe('Todo Tcomponent', function () {
 
     expect(ctrl.tText).toEqual('rename the class Intersection.java to IntesectionPoint.java.');
     expect(checkboxEl).not.toBeChecked();
-    expect(ctrl.tDueDate.getTime()).toEqual(new Date('19 Feb 2019').getTime());
+    expect(ctrl.tDueDate.getTime()).toEqual(new Date('19 Feb 2019 19:01').getTime());
   });
+
+  // TODO create spec for different date and time specification
+  
 });

@@ -26,6 +26,9 @@ let TComponentDirective = function($compile) {
                         .concat('/>'));
 
         $compile(element.contents())(scope);
+
+        // scroll to element position
+        $('html, body').animate({ scrollTop: $(document).height() }, 500);
       });
     }
   };
